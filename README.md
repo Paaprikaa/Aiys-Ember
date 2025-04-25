@@ -1,6 +1,8 @@
 # 2D Platformer Cave
 
-[2D Platformer Cave] is a small platformer game.
+A kid in a cave has to find a key to escape... before the darkness surrounds them.
+
+Check [Trello](https://trello.com/b/qKei3yWk/platformer-cave) to see my progress.
 
 ## 🎯 Project Purpose
 
