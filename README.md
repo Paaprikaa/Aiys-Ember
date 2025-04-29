@@ -9,3 +9,4 @@ Check [Trello](https://trello.com/b/qKei3yWk/platformer-cave) to see my progress
 - Refined movement: jump and dash.
 - Create and handle pixelart.
 - Use and create tiles.
+- Create and blend animations
