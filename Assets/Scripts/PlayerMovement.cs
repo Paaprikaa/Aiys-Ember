@@ -1,15 +1,17 @@
+using System;
 using UnityEngine;
+using static Unity.Burst.Intrinsics.X86;
 
 public class PlayerMovement : MonoBehaviour
 {
     public Rigidbody2D rb;
     public SpriteRenderer sprite;
     public int speed = 5;
-   
+
     private bool isFacingRight;
     private Animator animator;
     private float moveInput;
-    
+
     [Header("Jump")]
     public Transform feetPos;
     public float checkRadius;
@@ -28,7 +30,7 @@ public class PlayerMovement : MonoBehaviour
     {
         isFacingRight = true;
         isGrounded = true;
-        animator = GetComponent<Animator>();   
+        animator = GetComponent<Animator>();
     }
 
     void Update()
@@ -36,24 +38,41 @@ public class PlayerMovement : MonoBehaviour
         // jump logic
         isGrounded = Physics2D.OverlapCircle(feetPos.position, checkRadius, whatIsGround);
 
-        if(isGrounded && Input.GetButtonDown("Jump")) {
+        // jump and fall animation
+        if (isGrounded)
+        {
+            animator.SetBool("isJumping", false);
+        }
+        else
+        {
+            animator.SetBool("isJumping", true);
+        }
+
+        if (isGrounded && Input.GetButtonDown("Jump"))
+        {
+            //animator.SetBool("isJumping", true);
             rb.linearVelocity = Vector2.up * jumpForce;
             isJumping = true;
             jumpCoolDown = jumpTime;
         }
 
         // while holding jump button -> goes higher
-        if(Input.GetButton("Jump") && isJumping) {
-            if (jumpCoolDown > 0) { 
+        if (Input.GetButton("Jump") && isJumping)
+        {
+            if (jumpCoolDown > 0)
+            {
                 rb.linearVelocity = Vector2.up * jumpForce;
                 jumpCoolDown -= Time.deltaTime;
-            } else
+            }
+            else
             {
                 isJumping = false;
             }
         }
 
-        if (Input.GetButtonUp("Jump")) {
+        // don't jump any higher
+        if (Input.GetButtonUp("Jump"))
+        {
             isJumping = false;
         }
     }
@@ -65,8 +84,8 @@ public class PlayerMovement : MonoBehaviour
         moveInput = Input.GetAxisRaw("Horizontal");
         float horizontalAxisFloat = Input.GetAxis("Horizontal");
         rb.linearVelocity = new Vector2(moveInput * speed * Time.fixedDeltaTime, rb.linearVelocity.y);
-        animator.SetFloat("xVelocity", moveInput *  rb.linearVelocity.x);
-
+        animator.SetFloat("xVelocity", moveInput * rb.linearVelocity.x);
+        animator.SetFloat("yVelocity", rb.linearVelocity.y);
 
         FlipSprite(horizontalAxisFloat);
 
@@ -82,8 +101,9 @@ public class PlayerMovement : MonoBehaviour
 
     }
 
-    private void FlipSprite(float horizontalAxis) {
-        if(isFacingRight && horizontalAxis < 0f || !isFacingRight && horizontalAxis > 0f)
+    private void FlipSprite(float horizontalAxis)
+    {
+        if (isFacingRight && horizontalAxis < 0f || !isFacingRight && horizontalAxis > 0f)
         {
             sprite.flipX = isFacingRight;
             isFacingRight = !isFacingRight;
