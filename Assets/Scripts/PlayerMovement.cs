@@ -90,19 +90,4 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    private void Jump() {
-        // Debug.Log("jumping lol");
-        // Vector2.up * jumpForce / cantidad de tiempo de largo de salto
-        rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
-        jumpCoolDown = Time.time;
-    }
-
-    //private void OnTriggerEnter2D(Collider2D collider) {
-    //    isGrounded = true;
-    //}
-
-    //private void OnTriggerExit2D(Collider2D collider) {
-    //    isGrounded = false;
-    //}
-
 }
