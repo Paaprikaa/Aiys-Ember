@@ -1,6 +1,4 @@
-using System;
 using UnityEngine;
-using static Unity.Burst.Intrinsics.X86;
 
 public class PlayerMovement : MonoBehaviour
 {
