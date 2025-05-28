@@ -3839,7 +3839,7 @@ Transform:
   m_GameObject: {fileID: 619394800}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 66.97001, y: -1.7299995, z: 0}
+  m_LocalPosition: {x: 34.36001, y: 0.7800007, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3892,7 +3892,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 66.97001, y: -1.7299995}
+  m_AnchoredPosition: {x: 34.36001, y: 0.7800007}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &641411726
@@ -5483,6 +5483,7 @@ GameObject:
   - component: {fileID: 1516003512}
   - component: {fileID: 1516003511}
   - component: {fileID: 1516003510}
+  - component: {fileID: 1516003513}
   m_Layer: 6
   m_Name: 'Tilemap Breakable Platform '
   m_TagString: Untagged
@@ -6836,6 +6837,20 @@ TilemapCollider2D:
   m_MaximumTileChangeCount: 1000
   m_ExtrusionFactor: 0
   m_UseDelaunayMesh: 0
+--- !u!114 &1516003513
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1516003506}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c384ef38ae1f3f4d9aa95b98a111f62, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tilemap: {fileID: 1516003509}
+  breakDelay: 4
 --- !u!1001 &1647904286
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -73401,7 +73416,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 0
-  orthographic size: 5.5703125
+  orthographic size: 4.625
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
@@ -73426,7 +73441,7 @@ Transform:
   m_GameObject: {fileID: 1923915964}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 66.97, y: -1.73, z: -10}
+  m_LocalPosition: {x: 34.36, y: 0.78, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
