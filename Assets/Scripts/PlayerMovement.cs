@@ -15,10 +15,10 @@ public class PlayerMovement : MonoBehaviour
     public float checkRadius;
     public float jumpForce = 5;
     public LayerMask whatIsGround;
+    public bool isGrounded;
     private float jumpCoolDown;
     private bool isJumping;
     [SerializeField] private float jumpTime = 0.25f;
-    [SerializeField] private bool isGrounded;
 
     [Header("Fall Physics")]
     public float fallMultiplier;
@@ -48,7 +48,6 @@ public class PlayerMovement : MonoBehaviour
 
         if (isGrounded && Input.GetButtonDown("Jump"))
         {
-            //animator.SetBool("isJumping", true);
             rb.linearVelocity = Vector2.up * jumpForce;
             isJumping = true;
             jumpCoolDown = jumpTime;

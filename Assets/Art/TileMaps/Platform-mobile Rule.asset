@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d1514134bc4fbd41bb739b1b9a49231, type: 3}
   m_Name: Platform-mobile Rule
   m_EditorClassIdentifier: 
-  m_DefaultSprite: {fileID: -633882648, guid: 6832a082abeadcb489589e03f36c7e22, type: 3}
+  m_DefaultSprite: {fileID: 1446952559, guid: 65ba981b61820f34fbc5e178788dd524, type: 3}
   m_DefaultGameObject: {fileID: 0}
   m_DefaultColliderType: 1
   m_TilingRules:
