@@ -1,4 +1,4 @@
-# 2D Platformer Cave
+# Aiy's Ember
 
 A kid in a cave has to find a key to escape... before the darkness surrounds them.
 

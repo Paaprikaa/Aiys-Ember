@@ -4,7 +4,6 @@ public class CameraFollow : MonoBehaviour
 {
     public float followSpeed = 4f;
     public float y0ffset = 1f;
-    public float x0ffset = 1f;
     public Transform target; // will return the position of the player
 
     void Update()
