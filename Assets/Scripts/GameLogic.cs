@@ -1,42 +1,57 @@
 using UnityEngine;
-using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameLogic : MonoBehaviour
 {
-    public Slider currentLightSlider;
-    [SerializeField] private float _currentLight;
-    [SerializeField] private float _maxLight = 50f;
-
-    private void Start()
+    public GameObject pauseUI;
+    public GameObject GameOverUI;
+    public GameObject inGameUI;
+    void Update()
     {
-        _currentLight = _maxLight;
-        currentLightSlider.minValue = 0;
-        currentLightSlider.maxValue = _maxLight;
-        currentLightSlider.value = _currentLight;
-    }
-
-    private void Update()
-    {
-        _currentLight -= Time.deltaTime;
-        currentLightSlider.value = _currentLight;
-
-
-        if (_currentLight<0)
+        if (Input.GetKeyDown(KeyCode.Escape) )
         {
-            GameOver();
+            PauseGame();
         }
-
     }
 
-    public void addLight(GameObject light)
+    public void StartGame()
     {
-        Destroy(light);
-        _currentLight = _maxLight;
+        SceneManager.LoadScene("InGame");
     }
 
-    private void GameOver()
+    public void QuitGame()
     {
+        Application.Quit();
+    }
+
+    public void RestartGame()
+    {
+        GameOverUI.SetActive(false);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+    // Pause menu //
+    public void PauseGame()
+    {
+        if(pauseUI.activeSelf) {
+            // continue game
+            pauseUI.SetActive(false);
+            inGameUI.SetActive(true);
+            Time.timeScale = 1f;
+
+        } else
+        {
+            // pause game
+            pauseUI.SetActive(true);
+            inGameUI.SetActive(false);
+            Time.timeScale = 0f;
+        }
+    }
+
+    // Game over menu //
+    public void GameOver()
+    {
+        GameOverUI.SetActive(true);
         Debug.Log("game over");
     }
-
 }
