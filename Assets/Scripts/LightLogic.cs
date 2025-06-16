@@ -5,11 +5,13 @@ public class LightLogic : MonoBehaviour
 {
     public Slider currentLightSlider;
     public GameLogic gameLogic;
+    public bool inAltar;
     [SerializeField] private float _currentLight;
     [SerializeField] private float _maxLight = 50f;
 
     private void Start()
     {
+        inAltar = false;
         _currentLight = _maxLight;
         currentLightSlider.minValue = 0;
         currentLightSlider.maxValue = _maxLight;
@@ -18,11 +20,14 @@ public class LightLogic : MonoBehaviour
 
     private void Update()
     {
+        if (!inAltar)
+        {
         _currentLight -= Time.deltaTime;
         currentLightSlider.value = _currentLight;
+        }
 
 
-        if (_currentLight<0)
+        if (_currentLight < 0)
         {
             gameLogic.GameOver();
         }

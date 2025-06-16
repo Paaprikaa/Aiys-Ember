@@ -6,14 +6,35 @@ public class GameLogic : MonoBehaviour
     public GameObject pauseUI;
     public GameObject GameOverUI;
     public GameObject inGameUI;
+
+    [SerializeField] private bool hasKey;
+
+    private void Start()
+    {
+        hasKey = false;
+    }
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape) )
+        if (Input.GetKeyDown(KeyCode.Escape))
         {
             PauseGame();
         }
     }
 
+    public void getKey()
+    {
+        hasKey = true;
+    }
+
+    public void canOpenDoor()
+    {
+        if (hasKey)
+        {
+            // win
+        }
+    }
+
+    // Button functions //
     public void StartGame()
     {
         SceneManager.LoadScene("InGame");
@@ -33,13 +54,15 @@ public class GameLogic : MonoBehaviour
     // Pause menu //
     public void PauseGame()
     {
-        if(pauseUI.activeSelf) {
+        if (pauseUI.activeSelf)
+        {
             // continue game
             pauseUI.SetActive(false);
             inGameUI.SetActive(true);
             Time.timeScale = 1f;
 
-        } else
+        }
+        else
         {
             // pause game
             pauseUI.SetActive(true);
@@ -51,7 +74,7 @@ public class GameLogic : MonoBehaviour
     // Game over menu //
     public void GameOver()
     {
+        inGameUI.SetActive(false);
         GameOverUI.SetActive(true);
-        Debug.Log("game over");
     }
 }
