@@ -1,48 +1,53 @@
 using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
-public class BreakTiles : MonoBehaviour
+public class BreakablePlatform : MonoBehaviour
 {
     public Tilemap tilemap;
     public float breakDelay = 4f;
-    private HashSet<Vector3Int> brokeTiles = new HashSet<Vector3Int>();
+    private HashSet<Vector3Int> brokenTiles = new HashSet<Vector3Int>();
+    public AnimatedTile animatedTile;
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Player"))
         {
             Vector3 contactPoint = collision.contacts[0].point;
             Vector3Int contactTile = tilemap.WorldToCell(contactPoint);
-            if (brokeTiles.Contains(contactTile)) return;
+            HashSet<Vector3Int> breakTiles = new HashSet<Vector3Int>();
 
-            HashSet<Vector3Int> breakingTiles = new HashSet<Vector3Int>();
+            if (brokenTiles.Contains(contactTile)) return;
+
+            // Find center tile 
             Vector3Int i = contactTile;
             Vector3Int j = contactTile;
-            while (tilemap.HasTile(i))
+            Vector3Int centerTile = i;
+            if (!tilemap.HasTile(i))
             {
-                breakingTiles.Add(i);
                 i.x += 1;
-            }
-            while (tilemap.HasTile(j))
-            {
-                breakingTiles.Add(j);
                 j.x -= 1;
             }
-            brokeTiles.UnionWith(breakingTiles);
+            if (tilemap.HasTile(i))
+            {
+                centerTile = i;
+            }
+            else if (tilemap.HasTile(j))
+            {
+                centerTile = j;
+            }
 
-            StartCoroutine(BreakTileAfterDelay(breakingTiles.ToList()));
+            // Start animation
+            tilemap.SetTile(centerTile, animatedTile);
+
+            // Destroy after 4 seconds
+            StartCoroutine(BreakTileAfterDelay(centerTile));
         }
     }
 
-    private IEnumerator BreakTileAfterDelay(List<Vector3Int> breakingTiles)
+    private IEnumerator BreakTileAfterDelay(Vector3Int tileToBreak)
     {
         yield return new WaitForSeconds(breakDelay);
-        for (int i = 0; i < breakingTiles.Count; i++)
-        {
-            tilemap.SetTile(breakingTiles[i], null);
-        }
+        tilemap.SetTile(tileToBreak, null);
     }
 }
