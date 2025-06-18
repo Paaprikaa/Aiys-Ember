@@ -6,6 +6,7 @@ public class GameLogic : MonoBehaviour
     public GameObject pauseUI;
     public GameObject GameOverUI;
     public GameObject inGameUI;
+    public GameObject YouWinUI;
 
     [SerializeField] private bool hasKey;
 
@@ -31,6 +32,8 @@ public class GameLogic : MonoBehaviour
         if (hasKey)
         {
             // win
+            Time.timeScale = 0f;
+            YouWinUI.SetActive(true);
         }
     }
 
@@ -49,6 +52,7 @@ public class GameLogic : MonoBehaviour
     {
         GameOverUI.SetActive(false);
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        Time.timeScale = 1f;
     }
 
     // Pause menu //
