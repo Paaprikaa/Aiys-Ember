@@ -5052,6 +5052,7 @@ MonoBehaviour:
   tilemap: {fileID: 549302912}
   breakDelay: 4
   animatedTile: {fileID: 11400000, guid: 1511b797f32fc6546be83e8eadf2ac4d, type: 2}
+  playerMovement: {fileID: 641411726}
 --- !u!66 &549302914
 CompositeCollider2D:
   m_ObjectHideFlags: 0
@@ -5604,6 +5605,76 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 705259635}
   m_CullTransparentMesh: 1
+--- !u!1001 &719898047
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 885543538}
+    m_Modifications:
+    - target: {fileID: 2843730021193904310, guid: b6ce9f0fc4981b74ba4701a3c6993dbd, type: 3}
+      propertyPath: m_Name
+      value: Aiy's Altar (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3130550613338100427, guid: b6ce9f0fc4981b74ba4701a3c6993dbd, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -12.95
+      objectReference: {fileID: 0}
+    - target: {fileID: 3130550613338100427, guid: b6ce9f0fc4981b74ba4701a3c6993dbd, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -18.015
+      objectReference: {fileID: 0}
+    - target: {fileID: 3130550613338100427, guid: b6ce9f0fc4981b74ba4701a3c6993dbd, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3130550613338100427, guid: b6ce9f0fc4981b74ba4701a3c6993dbd, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3130550613338100427, guid: b6ce9f0fc4981b74ba4701a3c6993dbd, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3130550613338100427, guid: b6ce9f0fc4981b74ba4701a3c6993dbd, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3130550613338100427, guid: b6ce9f0fc4981b74ba4701a3c6993dbd, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3130550613338100427, guid: b6ce9f0fc4981b74ba4701a3c6993dbd, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3130550613338100427, guid: b6ce9f0fc4981b74ba4701a3c6993dbd, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3130550613338100427, guid: b6ce9f0fc4981b74ba4701a3c6993dbd, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3696372335333914264, guid: b6ce9f0fc4981b74ba4701a3c6993dbd, type: 3}
+      propertyPath: lightLogic
+      value: 
+      objectReference: {fileID: 281792488}
+    - target: {fileID: 8195866485812459004, guid: b6ce9f0fc4981b74ba4701a3c6993dbd, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.975
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: b6ce9f0fc4981b74ba4701a3c6993dbd, type: 3}
+--- !u!4 &719898048 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3130550613338100427, guid: b6ce9f0fc4981b74ba4701a3c6993dbd, type: 3}
+  m_PrefabInstance: {fileID: 719898047}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &733616438
 GameObject:
   m_ObjectHideFlags: 0
@@ -5709,8 +5780,8 @@ MonoBehaviour:
     m_Extent: {x: 0.9985302, y: 0.99853027, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
-  m_PointLightInnerRadius: 2
-  m_PointLightOuterRadius: 2.5
+  m_PointLightInnerRadius: 2.5
+  m_PointLightOuterRadius: 3.2
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1
@@ -6248,6 +6319,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 569637252}
+  - {fileID: 719898048}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &916326114

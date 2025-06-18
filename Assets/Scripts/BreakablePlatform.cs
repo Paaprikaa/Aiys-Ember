@@ -7,8 +7,10 @@ public class BreakablePlatform : MonoBehaviour
 {
     public Tilemap tilemap;
     public float breakDelay = 4f;
-    private HashSet<Vector3Int> brokenTiles = new HashSet<Vector3Int>();
     public AnimatedTile animatedTile;
+    public PlayerMovement playerMovement;
+    
+    private HashSet<Vector3Int> brokenTiles = new HashSet<Vector3Int>();
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -17,7 +19,7 @@ public class BreakablePlatform : MonoBehaviour
             Vector3Int contactTile = tilemap.WorldToCell(contactPoint);
             HashSet<Vector3Int> breakTiles = new HashSet<Vector3Int>();
 
-            if (brokenTiles.Contains(contactTile)) return;
+            if (brokenTiles.Contains(contactTile) || !playerMovement.isGrounded) return;
 
             // Find center tile 
             Vector3Int i = contactTile;
@@ -36,6 +38,7 @@ public class BreakablePlatform : MonoBehaviour
             {
                 centerTile = j;
             }
+            brokenTiles.Add(centerTile);
 
             // Start animation
             tilemap.SetTile(centerTile, animatedTile);
