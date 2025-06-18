@@ -7,12 +7,15 @@ public class GameLogic : MonoBehaviour
     public GameObject GameOverUI;
     public GameObject inGameUI;
     public GameObject YouWinUI;
+    public AudioManager audioManger;
 
     [SerializeField] private bool hasKey;
 
     private void Start()
     {
         hasKey = false;
+        audioManger.Play("MainSong", 1f, 1f, true);
+
     }
     void Update()
     {
@@ -38,10 +41,7 @@ public class GameLogic : MonoBehaviour
     }
 
     // Button functions //
-    public void StartGame()
-    {
-        SceneManager.LoadScene("InGame");
-    }
+
 
     public void QuitGame()
     {
