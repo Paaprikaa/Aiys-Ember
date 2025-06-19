@@ -1,7 +1,9 @@
 using UnityEngine;
 
+
 public class UILogic : MonoBehaviour
 {
+    [Header("UI element")]
     public GameObject pauseUI;
     public GameObject gameOverUI;
     public GameObject inGameUI;
@@ -9,6 +11,7 @@ public class UILogic : MonoBehaviour
     public GameObject introductionUI;
 
     [SerializeField] private bool introductionShown;
+
 
     private void Start()
     {
@@ -57,5 +60,4 @@ public class UILogic : MonoBehaviour
         inGameUI.SetActive(false);
         gameOverUI.SetActive(true);
     }
-
 }

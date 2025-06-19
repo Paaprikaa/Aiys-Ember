@@ -4,16 +4,26 @@ using UnityEngine.SceneManagement;
 public class GameLogic : MonoBehaviour
 {
     public UILogic uiLogic;
+    public CutSceneLogic cutSceneLogic;
     public AudioManager audioManger;
 
     [SerializeField] private bool _hasKey;
-    
+
 
     private void Start()
     {
         _hasKey = false;
-        //audioManger.Play("MainSong", 1f, 1f, true);
+        audioManger.Play("MainSong", 1f, 1f, true);
         Time.timeScale = 0f;
+    }
+
+    private void Update()
+    {
+        if (_hasKey)
+        {
+            cutSceneLogic.StartCutScene();
+            _hasKey = false;
+        }
     }
 
 
@@ -21,6 +31,8 @@ public class GameLogic : MonoBehaviour
     {
         _hasKey = true;
     }
+
+    
 
     public void canOpenDoor()
     {

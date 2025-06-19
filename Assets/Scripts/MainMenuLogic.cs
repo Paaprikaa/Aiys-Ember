@@ -10,7 +10,7 @@ public class MainMenuLogic : MonoBehaviour
     }
     public void StartGame()
     {
-        SceneManager.LoadScene("InGame");
+        SceneManager.LoadScene("GoToExitDoor");
     }
     public void QuitGame()
     {
