@@ -12,7 +12,7 @@ public class GameLogic : MonoBehaviour
     private void Start()
     {
         _hasKey = false;
-        audioManger.Play("MainSong", 1f, 1f, true);
+        //audioManger.Play("MainSong", 1f, 1f, true);
         Time.timeScale = 0f;
     }
 

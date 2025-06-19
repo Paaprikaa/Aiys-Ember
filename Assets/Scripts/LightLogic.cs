@@ -22,8 +22,16 @@ public class LightLogic : MonoBehaviour
     {
         if (!inAltar)
         {
-        _currentLight -= Time.deltaTime;
-        currentLightSlider.value = _currentLight;
+            _currentLight -= Time.deltaTime;
+            currentLightSlider.value = _currentLight;
+        }
+        else
+        {
+            if (_currentLight < _maxLight)
+            {
+                _currentLight += Time.deltaTime;
+                currentLightSlider.value = _currentLight;
+            }
         }
 
 

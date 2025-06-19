@@ -7,9 +7,11 @@ public class BreakablePlatform : MonoBehaviour
 {
     public Tilemap tilemap;
     public float breakDelay = 4f;
+    public float respawnDelay = 3f;
     public AnimatedTile animatedTile;
     public PlayerMovement playerMovement;
-    
+    public Tile breakablePlatformTile;
+
     private HashSet<Vector3Int> brokenTiles = new HashSet<Vector3Int>();
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -45,6 +47,7 @@ public class BreakablePlatform : MonoBehaviour
 
             // Destroy after 4 seconds
             StartCoroutine(BreakTileAfterDelay(centerTile));
+
         }
     }
 
@@ -52,5 +55,15 @@ public class BreakablePlatform : MonoBehaviour
     {
         yield return new WaitForSeconds(breakDelay);
         tilemap.SetTile(tileToBreak, null);
+        // Respawn after 3 seconds
+        StartCoroutine(RespawnTileAfterDelay(tileToBreak));
+    }
+
+    private IEnumerator RespawnTileAfterDelay(Vector3Int tileToRespawn)
+    {
+        yield return new WaitForSeconds(respawnDelay);
+        tilemap.SetTile(tileToRespawn, breakablePlatformTile);
+        brokenTiles.Remove(tileToRespawn);
+
     }
 }
