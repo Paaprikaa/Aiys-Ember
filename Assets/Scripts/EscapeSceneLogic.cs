@@ -7,11 +7,9 @@ public class EscapeSceneLogic : MonoBehaviour
     public LightLogic lightLogic;
     public AudioManager audioManger;
 
-
-
     private void Start()
     {
-        //audioManger.Play("MainSong", 1f, 1f, true);
+        audioManger.Play("MainSong", 1f, 1f, true);
         Time.timeScale = 1f;
         lightLogic.maxLight = 8f;
     }
@@ -39,6 +37,5 @@ public class EscapeSceneLogic : MonoBehaviour
     public void goToMenu()
     {
         SceneManager.LoadScene("MainMenu");
-
     }
 }

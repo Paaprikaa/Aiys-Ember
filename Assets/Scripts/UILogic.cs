@@ -13,7 +13,6 @@ public class UILogic : MonoBehaviour
 
     [SerializeField] private bool introductionShown;
 
-
     private void Start()
     {
         introductionShown = SceneManager.GetActiveScene().name == "Escape";
@@ -65,6 +64,7 @@ public class UILogic : MonoBehaviour
     // Game over menu //
     public void GameOver()
     {
+        Time.timeScale = 0f;
         inGameUI.SetActive(false);
         gameOverUI.SetActive(true);
     }

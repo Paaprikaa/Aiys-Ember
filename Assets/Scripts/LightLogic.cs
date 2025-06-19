@@ -7,36 +7,37 @@ public class LightLogic : MonoBehaviour
     public UILogic uiLogic;
     public bool inAltar;
     public float maxLight = 20f;
-    [SerializeField] private float _currentLight;
+    public PlayerData playerData;
+    public float currentLight;
     [SerializeField] private bool _lightWorking = true;
 
     private void Awake()
     {
         inAltar = false;
-        _currentLight = maxLight;
+        currentLight = maxLight;
         currentLightSlider.minValue = 0;
         currentLightSlider.maxValue = maxLight;
-        currentLightSlider.value = _currentLight;
+        currentLightSlider.value = currentLight;
     }
 
     private void Update()
     {
         if (!inAltar && _lightWorking)
         {
-            _currentLight -= Time.deltaTime;
-            currentLightSlider.value = _currentLight;
+            currentLight -= Time.deltaTime;
+            currentLightSlider.value = currentLight;
         }
         else
         {
-            if ((_currentLight < maxLight) && _lightWorking)
+            if ((currentLight < maxLight) && _lightWorking)
             {
-                _currentLight += Time.deltaTime;
-                currentLightSlider.value = _currentLight;
+                currentLight += Time.deltaTime;
+                currentLightSlider.value = currentLight;
             }
         }
 
 
-        if (_currentLight < 0)
+        if (currentLight < 0)
         {
             uiLogic.GameOver();
         }
@@ -45,8 +46,9 @@ public class LightLogic : MonoBehaviour
 
     public void addLight(GameObject light)
     {
-        Destroy(light);
-        _currentLight = maxLight;
+        playerData.SaveSparkle(light);
+        light.SetActive(false);
+        currentLight = maxLight;
     }
 
     public void pauseLight()

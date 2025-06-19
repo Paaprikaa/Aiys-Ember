@@ -26973,6 +26973,7 @@ GameObject:
   - component: {fileID: 990520648}
   - component: {fileID: 990520646}
   - component: {fileID: 990520650}
+  - component: {fileID: 990520651}
   m_Layer: 0
   m_Name: Logic Manager
   m_TagString: Untagged
@@ -27014,7 +27015,8 @@ MonoBehaviour:
   uiLogic: {fileID: 990520646}
   inAltar: 0
   maxLight: 8
-  _currentLight: 8
+  playerData: {fileID: 990520651}
+  currentLight: 0
   _lightWorking: 1
 --- !u!4 &990520649
 Transform:
@@ -27046,6 +27048,22 @@ MonoBehaviour:
   uiLogic: {fileID: 990520646}
   lightLogic: {fileID: 990520648}
   audioManger: {fileID: 452823034}
+--- !u!114 &990520651
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 990520645}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cd076cf210d0bf40bf5b08cca32b205, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  data: []
+  lastPosition: {x: 0, y: 0, z: 0}
+  lastAltar: {fileID: 0}
+  player: {fileID: 1950407300}
 --- !u!1 &1069773369
 GameObject:
   m_ObjectHideFlags: 0
@@ -89558,7 +89576,7 @@ MonoBehaviour:
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 0.5
   m_Color: {r: 0.02687787, g: 0.030722534, b: 0.03773582, a: 1}
-  m_Intensity: 20
+  m_Intensity: 0.2
   m_LightVolumeIntensity: 1
   m_LightVolumeEnabled: 0
   m_ApplyToSortingLayers: 000000005b2be9c4b1d5da9d
