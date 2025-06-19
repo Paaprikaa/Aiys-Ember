@@ -226,6 +226,85 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3704000361697445485, guid: 4640ef8743b9ceb46abf8c76cc8d74b5, type: 3}
   m_PrefabInstance: {fileID: 38229427}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &43815551
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 43815554}
+  - component: {fileID: 43815553}
+  - component: {fileID: 43815552}
+  m_Layer: 0
+  m_Name: EventSystem
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &43815552
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 43815551}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01614664b831546d2ae94a42149d80ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SendPointerHoverToParent: 1
+  m_MoveRepeatDelay: 0.5
+  m_MoveRepeatRate: 0.1
+  m_XRTrackingOrigin: {fileID: 0}
+  m_ActionsAsset: {fileID: -944628639613478452, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
+  m_PointAction: {fileID: -1654692200621890270, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
+  m_MoveAction: {fileID: -8784545083839296357, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
+  m_SubmitAction: {fileID: 392368643174621059, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
+  m_CancelAction: {fileID: 7727032971491509709, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
+  m_LeftClickAction: {fileID: 3001919216989983466, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
+  m_MiddleClickAction: {fileID: -2185481485913320682, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
+  m_RightClickAction: {fileID: -4090225696740746782, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
+  m_ScrollWheelAction: {fileID: 6240969308177333660, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
+  m_TrackedDevicePositionAction: {fileID: 6564999863303420839, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
+  m_TrackedDeviceOrientationAction: {fileID: 7970375526676320489, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
+  m_DeselectOnBackgroundClick: 1
+  m_PointerBehavior: 0
+  m_CursorLockBehavior: 0
+  m_ScrollDeltaPerTick: 6
+--- !u!114 &43815553
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 43815551}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76c392e42b5098c458856cdf6ecaaaa1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_FirstSelected: {fileID: 0}
+  m_sendNavigationEvents: 1
+  m_DragThreshold: 10
+--- !u!4 &43815554
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 43815551}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &44167180
 GameObject:
   m_ObjectHideFlags: 0
@@ -2455,7 +2534,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc9d0b07b13aad14682c70b4cb537f68, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameLogic: {fileID: 281792490}
+  gameLogic: {fileID: 281792493}
   doorText: {fileID: 1068375771}
 --- !u!210 &242986164
 SortingGroup:
@@ -2690,9 +2769,9 @@ GameObject:
   m_Component:
   - component: {fileID: 281792489}
   - component: {fileID: 281792488}
-  - component: {fileID: 281792490}
   - component: {fileID: 281792491}
   - component: {fileID: 281792492}
+  - component: {fileID: 281792493}
   m_Layer: 0
   m_Name: Logic Manager
   m_TagString: Untagged
@@ -2715,8 +2794,8 @@ MonoBehaviour:
   currentLightSlider: {fileID: 1547946074}
   uiLogic: {fileID: 281792491}
   inAltar: 0
-  maxLight: 15
-  _currentLight: 15
+  maxLight: 20
+  _currentLight: 20
   _lightWorking: 1
 --- !u!4 &281792489
 Transform:
@@ -2733,22 +2812,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &281792490
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 281792487}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 22feb0c1d95e1524585b4ab13c1a5536, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  uiLogic: {fileID: 281792491}
-  cutSceneLogic: {fileID: 281792492}
-  audioManger: {fileID: 60503061}
-  _hasKey: 0
 --- !u!114 &281792491
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2788,6 +2851,22 @@ MonoBehaviour:
   audioManger: {fileID: 60503061}
   lightLogic: {fileID: 281792488}
   timeBetweenTexts: 4
+--- !u!114 &281792493
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 281792487}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: efd671ac3452ca243b496735ead17d22, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  uiLogic: {fileID: 281792491}
+  cutSceneLogic: {fileID: 281792492}
+  audioManger: {fileID: 60503061}
+  _hasKey: 0
 --- !u!1 &283168836
 GameObject:
   m_ObjectHideFlags: 0
@@ -3318,8 +3397,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 281792490}
-        m_TargetAssemblyTypeName: GameLogic, Assembly-CSharp
+      - m_Target: {fileID: 281792493}
+        m_TargetAssemblyTypeName: FindKeySceneLogic, Assembly-CSharp
         m_MethodName: QuitGame
         m_Mode: 1
         m_Arguments:
@@ -4620,7 +4699,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -15.729996, y: -4.6900015}
+  m_AnchoredPosition: {x: -37.17, y: 0.72}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &641411726
@@ -5120,8 +5199,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 281792490}
-        m_TargetAssemblyTypeName: GameLogic, Assembly-CSharp
+      - m_Target: {fileID: 281792493}
+        m_TargetAssemblyTypeName: FindKeySceneLogic, Assembly-CSharp
         m_MethodName: QuitGame
         m_Mode: 1
         m_Arguments:
@@ -8373,8 +8452,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 281792490}
-        m_TargetAssemblyTypeName: GameLogic, Assembly-CSharp
+      - m_Target: {fileID: 281792493}
+        m_TargetAssemblyTypeName: FindKeySceneLogic, Assembly-CSharp
         m_MethodName: RestartGame
         m_Mode: 1
         m_Arguments:
@@ -8580,8 +8659,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 281792490}
-        m_TargetAssemblyTypeName: GameLogic, Assembly-CSharp
+      - m_Target: {fileID: 281792493}
+        m_TargetAssemblyTypeName: FindKeySceneLogic, Assembly-CSharp
         m_MethodName: RestartGame
         m_Mode: 1
         m_Arguments:
@@ -70439,7 +70518,7 @@ Transform:
   m_GameObject: {fileID: 1923915964}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -15.73, y: -4.69, z: -10}
+  m_LocalPosition: {x: -37.170002, y: 0.7200017, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -125635,7 +125714,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c32a234dc47002d41b924cc77a98cec5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameLogic: {fileID: 281792490}
+  gameLogic: {fileID: 281792493}
 --- !u!1 &2116803301
 GameObject:
   m_ObjectHideFlags: 0
@@ -126093,3 +126172,4 @@ SceneRoots:
   - {fileID: 242986162}
   - {fileID: 259324186}
   - {fileID: 23617804}
+  - {fileID: 43815554}

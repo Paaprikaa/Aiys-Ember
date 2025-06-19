@@ -6,11 +6,11 @@ public class LightLogic : MonoBehaviour
     public Slider currentLightSlider;
     public UILogic uiLogic;
     public bool inAltar;
-    public float maxLight;
+    public float maxLight = 20f;
     [SerializeField] private float _currentLight;
     [SerializeField] private bool _lightWorking = true;
 
-    private void Start()
+    private void Awake()
     {
         inAltar = false;
         _currentLight = maxLight;

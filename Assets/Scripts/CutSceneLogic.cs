@@ -2,6 +2,7 @@ using System.Collections;
 using System.Linq;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class CutSceneLogic : MonoBehaviour
@@ -67,6 +68,7 @@ public class CutSceneLogic : MonoBehaviour
             }
             timeCounter = 0f;
         }
+        SceneManager.LoadScene("Escape");
     }
 
 }

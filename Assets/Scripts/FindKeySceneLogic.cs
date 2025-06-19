@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class GameLogic : MonoBehaviour
+public class FindKeySceneLogic : MonoBehaviour
 {
     public UILogic uiLogic;
     public CutSceneLogic cutSceneLogic;

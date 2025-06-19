@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class Key : MonoBehaviour
 {
-    public GameLogic gameLogic;
+    public FindKeySceneLogic gameLogic;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {

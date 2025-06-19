@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 
 public class UILogic : MonoBehaviour
@@ -15,8 +16,8 @@ public class UILogic : MonoBehaviour
 
     private void Start()
     {
-        introductionShown = false;
-        introductionUI.SetActive(true);
+        introductionShown = SceneManager.GetActiveScene().name == "Escape";
+        introductionUI.SetActive(!introductionShown);
     }
 
     private void Update()
@@ -32,6 +33,13 @@ public class UILogic : MonoBehaviour
         {
             PauseGame();
         }
+    }
+
+    public void winUI()
+    {
+        inGameUI.SetActive(false);
+        youWinUI.SetActive(true);
+        Time.timeScale = 0f;
     }
 
     // Pause menu //

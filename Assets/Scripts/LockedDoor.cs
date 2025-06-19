@@ -1,8 +1,8 @@
 using UnityEngine;
 
-public class ExitDoor : MonoBehaviour
+public class LockedDoor : MonoBehaviour
 {
-    public GameLogic gameLogic;
+    public FindKeySceneLogic gameLogic;
     [SerializeField] private GameObject doorText;
 
     private void OnTriggerEnter2D(Collider2D collision)
