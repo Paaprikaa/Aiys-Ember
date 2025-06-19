@@ -161,6 +161,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _gameLogic: {fileID: 0}
+  floatSpeed: 2
+  floatHeight: 0.1
 --- !u!1 &4542535615748694779
 GameObject:
   m_ObjectHideFlags: 0

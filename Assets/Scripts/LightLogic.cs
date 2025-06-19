@@ -4,7 +4,7 @@ using UnityEngine.UI;
 public class LightLogic : MonoBehaviour
 {
     public Slider currentLightSlider;
-    public GameLogic gameLogic;
+    public UILogic uiLogic;
     public bool inAltar;
     [SerializeField] private float _currentLight;
     [SerializeField] private float _maxLight = 50f;
@@ -29,7 +29,7 @@ public class LightLogic : MonoBehaviour
 
         if (_currentLight < 0)
         {
-            gameLogic.GameOver();
+            uiLogic.GameOver();
         }
 
     }

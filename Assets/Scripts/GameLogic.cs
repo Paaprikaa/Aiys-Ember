@@ -3,46 +3,36 @@ using UnityEngine.SceneManagement;
 
 public class GameLogic : MonoBehaviour
 {
-    public GameObject pauseUI;
-    public GameObject GameOverUI;
-    public GameObject inGameUI;
-    public GameObject YouWinUI;
+    public UILogic uiLogic;
     public AudioManager audioManger;
 
-    [SerializeField] private bool hasKey;
+    [SerializeField] private bool _hasKey;
+    
 
     private void Start()
     {
-        hasKey = false;
+        _hasKey = false;
         audioManger.Play("MainSong", 1f, 1f, true);
+        Time.timeScale = 0f;
+    }
 
-    }
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            PauseGame();
-        }
-    }
 
     public void getKey()
     {
-        hasKey = true;
+        _hasKey = true;
     }
 
     public void canOpenDoor()
     {
-        if (hasKey)
+        if (_hasKey)
         {
-            // win
+            // Win
             Time.timeScale = 0f;
-            YouWinUI.SetActive(true);
+            uiLogic.youWinUI.SetActive(true);
         }
     }
 
     // Button functions //
-
-
     public void QuitGame()
     {
         Application.Quit();
@@ -50,35 +40,8 @@ public class GameLogic : MonoBehaviour
 
     public void RestartGame()
     {
-        GameOverUI.SetActive(false);
+        uiLogic.gameOverUI.SetActive(false);
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         Time.timeScale = 1f;
-    }
-
-    // Pause menu //
-    public void PauseGame()
-    {
-        if (pauseUI.activeSelf)
-        {
-            // continue game
-            pauseUI.SetActive(false);
-            inGameUI.SetActive(true);
-            Time.timeScale = 1f;
-
-        }
-        else
-        {
-            // pause game
-            pauseUI.SetActive(true);
-            inGameUI.SetActive(false);
-            Time.timeScale = 0f;
-        }
-    }
-
-    // Game over menu //
-    public void GameOver()
-    {
-        inGameUI.SetActive(false);
-        GameOverUI.SetActive(true);
-    }
+    }    
 }
